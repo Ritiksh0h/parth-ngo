@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import Hero from "@/components/Hero";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function PathNGO() {
   const [showMembersModal, setShowMembersModal] = useState(false);

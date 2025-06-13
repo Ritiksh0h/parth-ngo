@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { scrollToSection } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,23 +29,21 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isActive
-          ? "bg-white/95 backdrop-blur-sm shadow-sm"
+          ? "bg-white backdrop-blur-sm shadow-sm"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-orange-600"></div>
-            <span
-              className={`font-bold text-xl ${
-                isActive ? "text-gray-800" : "text-white"
-              }`}
-            >
-              Path
-            </span>
-          </div>
-
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo_path_ritik.png"
+              alt="Path NGO Logo"
+              width={150}
+              height={150}
+              className="rounded-sm cursor-pointer"
+            />
+          </Link>
           <div className="hidden md:flex items-center space-x-8">
             {["about", "impact", "projects", "contact"].map((section) => (
               <button

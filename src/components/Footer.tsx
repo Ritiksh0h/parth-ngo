@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer: React.FC = () => {
@@ -5,9 +7,16 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-800 py-12">
       <div className="container mx-auto px-4">
         <div className="text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 rounded-full bg-sky-600"></div>
-            <span className="font-bold text-xl text-white">PATH</span>
+          <div className="flex items-center justify-center space-x-2">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo_path_ritik.png"
+                alt="Path NGO Logo"
+                width={150}
+                height={150}
+                className="rounded-sm cursor-pointer"
+              />
+            </Link>
           </div>
           <p className="text-white/80 mb-2">
             People&apos;s Advancement Through Helping
