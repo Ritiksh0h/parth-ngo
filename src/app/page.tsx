@@ -9,7 +9,6 @@ import {
   Heart,
   Building,
   Users,
-  ArrowRight,
   Calendar,
   Target,
   Globe,
@@ -17,17 +16,13 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
+import Hero from "@/components/Hero";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function PathNGO() {
   const [showMembersModal, setShowMembersModal] = useState(false);
   const [showAnandamayeeModal, setShowAnandamayeeModal] = useState(false);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const executiveMembers = [
     {
@@ -119,103 +114,15 @@ export default function PathNGO() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-full bg-orange-600"></div>
-              <span className="font-bold text-xl text-gray-800">PATH</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-sm font-medium text-gray-800 hover:text-orange-600 transition-colors"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("impact")}
-                className="text-sm font-medium text-gray-800 hover:text-orange-600 transition-colors"
-              >
-                Impact
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="text-sm font-medium text-gray-800 hover:text-orange-600 transition-colors"
-              >
-                Projects
-              </button>
-              <button
-                onClick={() => setShowMembersModal(true)}
-                className="text-sm font-medium text-gray-800 hover:text-orange-600 transition-colors"
-              >
-                Team
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-sm font-medium text-gray-800 hover:text-orange-600 transition-colors"
-              >
-                Contact
-              </button>
-              <button className="bg-orange-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
-                Donate Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-16">
-        <div className="absolute inset-0">
-          <div
-            className="w-full h-full bg-gradient-to-r from-gray-800/70 to-gray-800/70"
-            style={{
-              backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" fill="%23667eea"><polygon points="0,600 1000,600 1000,0 0,200" opacity="0.1"/></svg>')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
-        </div>
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-3xl">
-            <div className="mb-6 text-white border-white/30 bg-orange-600 px-4 py-2 rounded-full text-sm inline-block">
-              ESTABLISHED 26TH JULY 2006 • 18+ YEARS OF SERVICE
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              PEOPLE&apos;S ADVANCEMENT THROUGH HELPING
-            </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              A Non-Political, Non-Profitable & Secular Voluntary organization
-              empowering communities across Assam through education, healthcare,
-              cultural preservation, women empowerment, and sustainable
-              development initiatives.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-3 text-white font-semibold rounded-lg bg-orange-600 hover:bg-orange-700 transition-colors inline-flex items-center">
-                Support Our Mission
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="px-8 py-3 text-white border border-white rounded-lg hover:bg-white hover:text-gray-800 transition-colors"
-              >
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <div className="min-h-screen">
+      <Hero />
       {/* Mission Statement */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800">
               EMPOWERING DEPRESSED CLASSES,
-              <span className="block text-orange-600">
+              <span className="block text-sky-600">
                 ESPECIALLY WOMEN & CHILDREN
               </span>
             </h2>
@@ -227,7 +134,7 @@ export default function PathNGO() {
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-green-700">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-lime-700">
                   <Target className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold mb-2 text-gray-800">
@@ -251,7 +158,7 @@ export default function PathNGO() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-blue-700">
+                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-sky-700">
                   <HandHeart className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold mb-2 text-gray-800">
@@ -268,10 +175,10 @@ export default function PathNGO() {
       </section>
 
       {/* Impact Statistics */}
-      <section id="impact" className="py-20 bg-green-700">
+      <section id="impact" className="py-20 bg-lime-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="mb-4 text-white border-white/30 bg-orange-600 px-4 py-2 rounded-full text-sm inline-block">
+            <div className="mb-4 text-black border-white/30 bg-white/70 px-4 py-2 rounded-full text-sm inline-block">
               OUR IMPACT SINCE 2006
             </div>
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -324,10 +231,11 @@ export default function PathNGO() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-[url(/health_camp_2.jpg)] relative bg-cover bg-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-700/70" />
+        <div className="container mx-auto px-4 z-20">
           <div className="max-w-4xl mx-auto">
-            <div className="relative rounded-2xl p-12 text-center bg-gradient-to-r from-orange-600/90 to-orange-600/90">
+            <div className="relative rounded-2xl p-12 text-center bg-gradient-to-r from-sky-600/90 to-sky-600/90">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 SUPPORT ANANDAMAYEE HOME
                 <br />
@@ -339,12 +247,12 @@ export default function PathNGO() {
                 Established October 2023, seeking funding for expansion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-white text-orange-600 hover:bg-gray-100 font-semibold rounded-lg transition-colors">
+                <button className="px-8 py-3 bg-white text-sky-600 hover:bg-gray-100 font-semibold rounded-lg transition-colors">
                   DONATE NOW
                 </button>
                 <button
                   onClick={() => setShowAnandamayeeModal(true)}
-                  className="px-8 py-3 text-white border border-white hover:bg-white hover:text-orange-600 rounded-lg transition-colors"
+                  className="px-8 py-3 text-white border border-white hover:bg-white hover:text-sky-600 rounded-lg transition-colors"
                 >
                   LEARN MORE
                 </button>
@@ -359,7 +267,7 @@ export default function PathNGO() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-gray-800">
-              OUR <span className="text-orange-600">PROGRAMS</span> & PROJECTS
+              OUR <span className="text-sky-600">PROGRAMS</span> & PROJECTS
             </h2>
             <p className="text-lg max-w-2xl mx-auto text-gray-800">
               Comprehensive initiatives addressing community needs from elderly
@@ -368,13 +276,14 @@ export default function PathNGO() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
+            <Link
               className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
-              onClick={() => setShowAnandamayeeModal(true)}
+              // onClick={() => setShowAnandamayeeModal(true)}
+              href="/anandamayee-home"
             >
-              <div className="h-48 bg-gradient-to-r from-orange-400 to-orange-600 relative">
+              <div className="h-48 bg-gradient-to-r from-sky-400 to-sky-600 relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm">
+                <div className="absolute top-4 left-4 bg-sky-600 text-white px-3 py-1 rounded-full text-sm">
                   ELDERLY CARE
                 </div>
               </div>
@@ -387,12 +296,12 @@ export default function PathNGO() {
                   check-ups, and celebrating festivals like Bihu and Holi with
                   elderly residents since October 27, 2023.
                 </p>
-                <div className="flex items-center text-sm text-blue-600">
+                <div className="flex items-center text-sm text-blue-800">
                   <span>Learn more about our elderly care</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
               </div>
-            </div>
+            </Link>
 
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
               <div className="h-48 bg-gradient-to-r from-green-400 to-green-600 relative">
@@ -410,7 +319,7 @@ export default function PathNGO() {
                   rural areas. Free coaching programs and social welfare
                   services to remove illiteracy.
                 </p>
-                <div className="flex items-center text-sm text-blue-600">
+                <div className="flex items-center text-sm text-blue-800">
                   <span>Discover our education initiatives</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
@@ -433,7 +342,7 @@ export default function PathNGO() {
                   Satriya dance workshops across different districts of Assam to
                   preserve traditional arts.
                 </p>
-                <div className="flex items-center text-sm text-blue-600">
+                <div className="flex items-center text-sm text-blue-800">
                   <span>Explore cultural programs</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
@@ -456,7 +365,7 @@ export default function PathNGO() {
                   rehabilitation programs for street children, orphans, and old
                   helpless people during natural calamities.
                 </p>
-                <div className="flex items-center text-sm text-blue-600">
+                <div className="flex items-center text-sm text-blue-800">
                   <span>See our disaster response</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
@@ -464,9 +373,9 @@ export default function PathNGO() {
             </div>
 
             <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600 relative">
+              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-800 relative">
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
+                <div className="absolute top-4 left-4 bg-blue-800 text-white px-3 py-1 rounded-full text-sm">
                   HEALTHCARE
                 </div>
               </div>
@@ -479,7 +388,7 @@ export default function PathNGO() {
                   Regular health check-up camps ensuring preventive healthcare
                   reaches every community.
                 </p>
-                <div className="flex items-center text-sm text-blue-600">
+                <div className="flex items-center text-sm text-blue-800">
                   <span>Learn about health programs</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
@@ -502,7 +411,7 @@ export default function PathNGO() {
                   organizing expos and training in weaving, cutting, embroidery
                   for men, women and youth in rural areas.
                 </p>
-                <div className="flex items-center text-sm text-blue-600">
+                <div className="flex items-center text-sm text-blue-800">
                   <span>See empowerment programs</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
@@ -513,21 +422,30 @@ export default function PathNGO() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4">
+      <section
+        id="about"
+        className="py-20 bg-[url(/free_coaching.jpg)] relative bg-cover bg-center"
+      >
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-700/70 z-0" />
+
+        {/* Main content wrapper with higher z-index */}
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* Title */}
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-gray-800">
+              <h2 className="text-4xl font-bold mb-6 text-white">
                 EMPOWERMENT THROUGH
-                <span className="block text-orange-600">
+                <span className="block text-sky-400">
                   WOMEN & CHILDREN DEVELOPMENT
                 </span>
               </h2>
             </div>
 
+            {/* Vision & Mission cards */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="bg-orange-600 text-white p-4">
+                <div className="bg-sky-600 text-white p-4">
                   <h3 className="text-xl font-semibold">🎯 Our Vision</h3>
                 </div>
                 <div className="p-6">
@@ -539,7 +457,7 @@ export default function PathNGO() {
               </div>
 
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="bg-green-700 text-white p-4">
+                <div className="bg-lime-700 text-white p-4">
                   <h3 className="text-xl font-semibold">🚀 Our Mission</h3>
                 </div>
                 <div className="p-6">
@@ -553,6 +471,7 @@ export default function PathNGO() {
               </div>
             </div>
 
+            {/* Recognition section */}
             <div className="relative rounded-2xl p-12 bg-gradient-to-r from-gray-800/80 to-gray-800/80 text-white">
               <div className="max-w-2xl">
                 <h3 className="text-2xl font-bold mb-4">
@@ -579,7 +498,7 @@ export default function PathNGO() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-green-700">
+      <section id="contact" className="py-20 bg-lime-700">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -634,7 +553,7 @@ export default function PathNGO() {
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <MapPin className="w-5 h-5 mt-1 text-orange-600" />
+                      <MapPin className="w-5 h-5 mt-1 text-sky-600" />
                       <div>
                         <p className="font-medium text-gray-800">Address</p>
                         <p className="text-sm text-gray-800">
@@ -647,7 +566,7 @@ export default function PathNGO() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Phone className="w-5 h-5 mt-1 text-orange-600" />
+                      <Phone className="w-5 h-5 mt-1 text-sky-600" />
                       <div>
                         <p className="font-medium text-gray-800">
                           Phone Numbers
@@ -666,7 +585,7 @@ export default function PathNGO() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Mail className="w-5 h-5 mt-1 text-orange-600" />
+                      <Mail className="w-5 h-5 mt-1 text-sky-600" />
                       <div>
                         <p className="font-medium text-gray-800">Email</p>
                         <p className="text-sm text-gray-800">
@@ -680,9 +599,9 @@ export default function PathNGO() {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
+                    className="w-full p-3 border text-black placeholder:text-gray-400 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600"
                   />
-                  <button className="w-full bg-orange-600 text-white font-semibold py-3 rounded-lg hover:bg-orange-700 transition-colors">
+                  <button className="w-full bg-sky-600 text-white font-semibold py-3 rounded-lg hover:bg-sky-700 transition-colors">
                     SUBSCRIBE TO NEWSLETTER
                   </button>
                   <div className="text-center mt-4">
@@ -697,38 +616,12 @@ export default function PathNGO() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 py-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-orange-600"></div>
-              <span className="font-bold text-xl text-white">PATH</span>
-            </div>
-            <p className="text-white/80 mb-2">
-              People&apos;s Advancement Through Helping
-            </p>
-            <p className="text-white/60 text-sm mb-4">
-              Registered under Society Registration Act, XXI of 1860 |
-              Registration No. KAM/240/A-3/439 of 2006
-            </p>
-            <p className="text-white/60 text-sm mb-6">
-              80G & 12AA Certified | CSR Eligible | FCRA Registered | NITI Aayog
-              Empaneled
-            </p>
-            <p className="text-white/50 text-sm">
-              &copy; 2024 PATH NGO. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
-
       {/* Members Modal */}
       {showMembersModal && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-              <h2 className="text-2xl font-semibold text-orange-600">
+              <h2 className="text-2xl font-semibold text-sky-600">
                 Our Team Members
               </h2>
               <button
@@ -741,7 +634,7 @@ export default function PathNGO() {
 
             <div className="p-6 space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-700">
+                <h3 className="text-xl font-semibold mb-4 text-lime-700">
                   Executive Body Members
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -750,7 +643,7 @@ export default function PathNGO() {
                       key={index}
                       className="bg-white border rounded-lg p-4 text-center shadow-sm"
                     >
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3 bg-orange-600">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3 bg-sky-600">
                         {member.name
                           .split(" ")
                           .map((n) => n[0])
@@ -759,7 +652,7 @@ export default function PathNGO() {
                       <h4 className="font-semibold text-gray-800">
                         {member.name}
                       </h4>
-                      <p className="font-medium text-sm text-orange-600">
+                      <p className="font-medium text-sm text-sky-600">
                         {member.designation}
                       </p>
                       <p className="text-xs mt-2 whitespace-pre-line text-gray-800">
@@ -774,7 +667,7 @@ export default function PathNGO() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-700">
+                <h3 className="text-xl font-semibold mb-4 text-lime-700">
                   General Body Members (Resource Persons)
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -783,7 +676,7 @@ export default function PathNGO() {
                       key={index}
                       className="bg-white border rounded-lg p-4 text-center shadow-sm"
                     >
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3 bg-orange-600">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3 bg-sky-600">
                         {member.name
                           .split(" ")
                           .map((n) => n[0])
@@ -792,7 +685,7 @@ export default function PathNGO() {
                       <h4 className="font-semibold text-gray-800">
                         {member.name}
                       </h4>
-                      <p className="font-medium text-sm text-orange-600">
+                      <p className="font-medium text-sm text-sky-600">
                         {member.designation}
                       </p>
                       <p className="text-xs mt-2 whitespace-pre-line text-gray-800">
@@ -815,7 +708,7 @@ export default function PathNGO() {
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-              <h2 className="text-2xl font-semibold text-orange-600 flex items-center gap-2">
+              <h2 className="text-2xl font-semibold text-sky-600 flex items-center gap-2">
                 <Home className="w-6 h-6" />
                 Anandamayee Home - A Tranquil Nest for Old People
               </h2>
@@ -829,14 +722,14 @@ export default function PathNGO() {
 
             <div className="p-6 space-y-6">
               <div className="text-center">
-                <div className="inline-block text-white px-6 py-3 rounded-lg bg-orange-600">
+                <div className="inline-block text-white px-6 py-3 rounded-lg bg-sky-600">
                   <strong>Established: 27th October 2023</strong>
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-orange-600 text-white p-4">
+                  <div className="bg-sky-600 text-white p-4">
                     <h3 className="text-lg font-semibold">
                       🇮🇳 Independence Day 2023
                     </h3>
@@ -852,7 +745,7 @@ export default function PathNGO() {
                 </div>
 
                 <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-green-700 text-white p-4">
+                  <div className="bg-lime-700 text-white p-4">
                     <h3 className="text-lg font-semibold">
                       🌊 Flood Relief - Nagaon 2023
                     </h3>
@@ -867,7 +760,7 @@ export default function PathNGO() {
                 </div>
 
                 <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-blue-600 text-white p-4">
+                  <div className="bg-blue-800 text-white p-4">
                     <h3 className="text-lg font-semibold">
                       📚 Free Coaching Program
                     </h3>
@@ -882,7 +775,7 @@ export default function PathNGO() {
                 </div>
 
                 <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-orange-600 text-white p-4">
+                  <div className="bg-sky-600 text-white p-4">
                     <h3 className="text-lg font-semibold">
                       🩺 Health Check-up Camps
                     </h3>
@@ -913,7 +806,7 @@ export default function PathNGO() {
                 </div>
 
                 <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-green-700 text-white p-4">
+                  <div className="bg-lime-700 text-white p-4">
                     <h3 className="text-lg font-semibold">
                       🌈 Holi Celebration
                     </h3>
@@ -928,8 +821,8 @@ export default function PathNGO() {
                 </div>
               </div>
 
-              <div className="text-center p-8 rounded-xl bg-gray-50">
-                <h3 className="text-xl font-semibold mb-4 text-orange-600">
+              <div className="text-center p-8 rounded-xl bg-black/10">
+                <h3 className="text-xl font-semibold mb-4 text-sky-600">
                   Support Our Mission - Funding Needed
                 </h3>
                 <p className="mb-4 text-gray-800">
@@ -938,26 +831,24 @@ export default function PathNGO() {
                   Anandamayee Home before the end of this year. Your support
                   enables us to reach more seniors in need.
                 </p>
-                <div className="grid md:grid-cols-3 gap-4 text-sm mb-4">
+                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600 mb-4">
                   <div>
-                    <strong className="text-orange-600">Tax Benefits:</strong>
+                    <strong className="text-sky-600">Tax Benefits:</strong>
                     <br />
                     80G Tax Exemption Available
                   </div>
                   <div>
-                    <strong className="text-orange-600">CSR Eligible:</strong>
+                    <strong className="text-sky-600">CSR Eligible:</strong>
                     <br />
                     Corporate Funding Welcome
                   </div>
                   <div>
-                    <strong className="text-orange-600">
-                      FCRA Registered:
-                    </strong>
+                    <strong className="text-sky-600">FCRA Registered:</strong>
                     <br />
                     International Donations Accepted
                   </div>
                 </div>
-                <div className="font-semibold text-orange-600">
+                <div className="font-semibold text-sky-600">
                   🤝 Partner with us in making a difference 🤝
                 </div>
               </div>

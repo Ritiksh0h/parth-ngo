@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  images: { remotePatterns: [new URL(`https://images.unsplash.com/**`)] },
+const config: NextConfig = {
+  images: {
+    domains: ["images.unsplash.com"],
+  },
 };
 
-export default nextConfig;
+export default config;
