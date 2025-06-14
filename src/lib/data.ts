@@ -114,11 +114,11 @@ const program = [
     description:
       "Empaneled with North East Zone Cultural Center, organizing Satriya dance workshops across different districts of Assam to preserve traditional arts.",
     actionText: "Explore cultural programs",
-    image: "/Dance_workshop_2.jfif",
+    image: "/Dance_workshop_2.jpg",
     Gallery: [
       "/Dance_workshop_1.jpg",
-      "/Dance_workshop_2.jfif",
-      "/Dance_workshop_3.jfif",
+      "/Dance_workshop_2.jpg",
+      "/Dance_workshop_3.jpg",
       "/Dance_workshop_4.jpg",
       "/Dance_workshop_5.jpg",
       "/Dance_workshop_6.jpg",

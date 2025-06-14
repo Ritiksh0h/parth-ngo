@@ -30,7 +30,8 @@ const Footer: React.FC = () => {
             Empaneled
           </p>
           <p className="text-white/50 text-sm">
-            &copy; 2024 PATH NGO. All rights reserved.
+            &copy; 2024 PATH NGO. All rights reserved. designed by{" "}
+            <Link href="https://ritikshah.vercel.app">Ritik Shah</Link>
           </p>
         </div>
       </div>
