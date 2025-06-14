@@ -18,7 +18,7 @@ export default function DonatePage() {
       {/* Hero Section */}
       <div className="relative overflow-hidden h-64 md:h-[600px]">
         <Image
-          src="/anandamayee_home.jpg"
+          src="/Anandamayee_Home.jpg"
           alt="PATH NGO Donation"
           width={1920}
           height={900}

@@ -181,7 +181,7 @@ export default function PathNGO() {
       <section className="py-20 relative bg-cover bg-center">
         <div className="absolute inset-0">
           <Image
-            src="/health_camp_2.jpg"
+            src="/Health_camp_2.jpg"
             alt="Elderly Care"
             layout="fill"
             objectFit="cover"
