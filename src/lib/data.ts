@@ -1,18 +1,23 @@
+import { profile } from "console";
+
 const executiveMembers = [
   {
     name: "MEGHALI DEKA",
     designation: "PRESIDENT",
+    profile: "/Meghali_R_Deka.jpg",
     address: "H/NO. 06, ZOO NARENGI ROAD\nGUWAHATI-24",
     occupation: "BUSINESS",
   },
   {
     name: "ARABINDA DEKA",
+    profile: "/Arabinda_Deka.jpg",
     designation: "VICE PRESIDENT",
     address: "MADHABDEV NAGAR\nP.O. DEVOKOTANAGAR\nGUWAHATI-33, ASSAM",
     occupation: "BUSINESS",
   },
   {
     name: "CHAITALI D CHETRI",
+    profile: "/Chaitali_D_Chetri.jpg",
     designation: "GEN. SECRETARY",
     address: "174, RAJGARH ROAD, 2ND FLOOR\nGUWAHATI-07",
     occupation: "BUSINESS",
@@ -27,18 +32,21 @@ const executiveMembers = [
   },
   {
     name: "KRISHNA DAS DAM",
+    profile: "/Krishna_Das_Dam.jpg",
     designation: "TREASURER",
     address: "110, SHANTI NIWAS\nRAJGARH MAIN ROAD\nGUWAHATI-05",
     occupation: "TEACHER",
   },
   {
     name: "RIPA CHETRI",
+    profile: "/Ripa_Chetri.jpg",
     designation: "MEMBER",
     address: "110, SHANTI NIWAS\nRAJGARH MAIN ROAD\nGUWAHATI-05",
     occupation: "SERVICE",
   },
   {
     name: "KUSHAL BHASKAR",
+    profile: "/Kushal_Bhaskar.jpg",
     designation: "MEMBER",
     address: "C/O K.C. PAUL, H.NO.\n37/1, BY LANE NO. 3\nSHREE NAGAR, GHY-5",
     occupation: "SERVICE",
