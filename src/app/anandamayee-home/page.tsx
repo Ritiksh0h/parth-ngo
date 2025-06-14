@@ -2,33 +2,36 @@
 
 import Image from "next/image";
 import SubPageHeader from "@/components/SubPageHeader";
+import { EventCard } from "@/components/EventCard";
 
 export default function AnandamayeeHomePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <SubPageHeader title="Anandamayee Home - A Tranquil Nest for Old People" />
-
+      {/* Hero Section */}
+      <div className="relative overflow-hidden h-64 md:h-[600px]">
+        <Image
+          src="/Anandamayee_Home.jpg"
+          alt="Elderly care"
+          width={1920}
+          height={900}
+          className="object-cover w-full h-full absolute inset-0"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-600/60 to-gray-600/40"></div>
+        <div className="absolute inset-0 flex items-center justify-center flex-col text-white p-6">
+          <div className="inline-block text-white px-4 py-2 rounded-lg bg-sky-600/80 backdrop-blur-sm mb-2">
+            <strong>Established: 27th October 2023</strong>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-center">
+            Anandamayee Home
+          </h2>
+          <p className="text-lg md:text-xl text-center max-w-2xl">
+            A Tranquil Nest for Old People
+          </p>
+        </div>
+      </div>
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto space-y-12">
-          {/* Hero Section */}
-          <div className="relative rounded-xl overflow-hidden h-64 md:h-96">
-            <Image
-              src="https://images.unsplash.com/photo-1581579438747-104c53495b52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-              alt="Elderly care"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-sky-600/80 to-sky-600/60"></div>
-            <div className="absolute inset-0 flex items-center justify-center flex-col text-white p-6">
-              <div className="inline-block text-white px-6 py-3 rounded-lg bg-sky-600/80 backdrop-blur-sm mb-4">
-                <strong>Established: 27th October 2023</strong>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-center">
-                A Tranquil Nest for Old People
-              </h2>
-            </div>
-          </div>
-
           {/* About Section */}
           <div className="bg-white p-8 rounded-xl shadow-sm">
             <h2 className="text-2xl font-bold mb-4 text-sky-600">
@@ -49,100 +52,31 @@ export default function AnandamayeeHomePage() {
               for expansion to reach more seniors in need.
             </p>
           </div>
+          {/* Activities Section */}
+          <h2 className="text-2xl font-bold mb-6 text-sky-600">
+            Our Activities
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <EventCard
+              title="🌈 Holi Celebration"
+              image="/Holi_AH_1.jpg"
+              description="The festival of colors brought boundless joy to our elderly residents, creating cherished memories through vibrant celebrations and shared happiness in their golden years."
+              Gallery={["/Holi_AH_1.jpg", "/Holi_AH_2.jpg"]}
+            />
 
-          {/* Activities Grid */}
-          <div>
-            <h2 className="text-2xl font-bold mb-6 text-sky-600">
-              Our Activities
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-sky-600 text-white p-4">
-                  <h3 className="text-lg font-semibold">
-                    🇮🇳 Independence Day 2023
-                  </h3>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm text-gray-800">
-                    Patriotic celebrations with residents participating in
-                    cultural programs, flag hoisting, and traditional
-                    festivities that brought joy and national pride to everyone.
-                  </p>
-                </div>
-              </div>
+            <EventCard
+              title="🎊 Bihu Celebration"
+              image="/Bihu_AH_1.jpg"
+              description="Traditional Assamese New Year celebrations with music, dance, delicious cuisine, and cultural programs that strengthen community bonds and bring joy to elderly residents."
+              Gallery={["/Bihu_AH_1.jpg", "/Bihu_AH_2.jpg"]}
+            />
 
-              <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-lime-700 text-white p-4">
-                  <h3 className="text-lg font-semibold">
-                    🌊 Flood Relief - Nagaon 2023
-                  </h3>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm text-gray-800">
-                    Our team organized flood relief activities, providing
-                    essential supplies and support to affected families during
-                    the natural disaster in Nagaon district.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-blue-800 text-white p-4">
-                  <h3 className="text-lg font-semibold">
-                    📚 Free Coaching Program
-                  </h3>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm text-gray-800">
-                    Educational support for underprivileged children, helping
-                    them build a better future through mentorship and quality
-                    education alongside our elderly care mission.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-sky-600 text-white p-4">
-                  <h3 className="text-lg font-semibold">
-                    🩺 Health Check-up Camps
-                  </h3>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm text-gray-800">
-                    Regular medical check-ups for residents and community
-                    members, ensuring preventive healthcare and medical
-                    attention from qualified professionals.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-yellow-500 text-gray-800 p-4">
-                  <h3 className="text-lg font-semibold">🎊 Bihu Celebration</h3>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm text-gray-800">
-                    Traditional Assamese New Year celebrations with music,
-                    dance, delicious cuisine, and cultural programs that
-                    strengthen community bonds and bring joy to elderly
-                    residents.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-lime-700 text-white p-4">
-                  <h3 className="text-lg font-semibold">🌈 Holi Celebration</h3>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm text-gray-800">
-                    Festival of colors bringing boundless joy to elderly
-                    residents with colorful celebrations, creating lasting
-                    memories and happiness in their golden years.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <EventCard
+              title="🩺 Health Check-up Camps"
+              image="/Healthcheckup_AH_2.jpg"
+              description="Regular medical check-ups for residents and community members, ensuring preventive healthcare and medical attention from qualified professionals."
+              Gallery={["/Healthcheckup_AH_1.jpg", "/Healthcheckup_AH_2.jpg"]}
+            />
           </div>
 
           {/* Support Section */}
@@ -189,43 +123,20 @@ export default function AnandamayeeHomePage() {
             <h2 className="text-2xl font-bold mb-6 text-sky-600">
               Contact Us About Anandamayee Home
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="text-gray-700 mb-4">
-                  For more information about Anandamayee Home, volunteering
-                  opportunities, or to arrange a visit, please contact us:
-                </p>
-                <p className="text-gray-700">
-                  <strong>Phone:</strong> +91 94351 18741
-                  <br />
-                  <strong>Email:</strong> ngo_people@yahoo.in
-                  <br />
-                  <strong>Address:</strong> 26, Bhaskar Nagar, R.G. Baruah Road,
-                  Guwahati - 781021, Assam
-                </p>
-              </div>
-              <div>
-                <form className="space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full p-3 border text-black placeholder:text-gray-400 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full p-3 border text-black placeholder:text-gray-400 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600"
-                  />
-                  <textarea
-                    placeholder="Your Message"
-                    rows={4}
-                    className="w-full p-3 border text-black placeholder:text-gray-400 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600"
-                  ></textarea>
-                  <button className="w-full bg-sky-600 text-white font-semibold py-3 rounded-lg hover:bg-sky-700 transition-colors">
-                    SEND MESSAGE
-                  </button>
-                </form>
-              </div>
+
+            <div>
+              <p className="text-gray-700 mb-4">
+                For more information about Anandamayee Home, volunteering
+                opportunities, or to arrange a visit, please contact us:
+              </p>
+              <p className="text-gray-700">
+                <strong>Phone:</strong> +91 94351 18741
+                <br />
+                <strong>Email:</strong> ngo_people@yahoo.in
+                <br />
+                <strong>Address:</strong> 26, Bhaskar Nagar, R.G. Baruah Road,
+                Guwahati - 781021, Assam
+              </p>
             </div>
           </div>
         </div>

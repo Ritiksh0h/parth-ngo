@@ -1,11 +1,8 @@
 "use client";
-import { useState } from "react";
 import {
   Phone,
   Mail,
   MapPin,
-  DollarSign,
-  Home,
   Heart,
   Building,
   Users,
@@ -13,108 +10,59 @@ import {
   Target,
   Globe,
   HandHeart,
-  ChevronRight,
-  X,
 } from "lucide-react";
 import Hero from "@/components/Hero";
+import { ServiceCard } from "@/components/ProgramsCard";
+import { program } from "@/lib/data";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function PathNGO() {
-  const [showMembersModal, setShowMembersModal] = useState(false);
-  const [showAnandamayeeModal, setShowAnandamayeeModal] = useState(false);
-
-  const executiveMembers = [
-    {
-      name: "MEGHALI DEKA",
-      designation: "PRESIDENT",
-      address: "H/NO. 06, ZOO NARENGI ROAD\nGUWAHATI-24",
-      occupation: "BUSINESS",
-    },
-    {
-      name: "ARABINDA DEKA",
-      designation: "VICE PRESIDENT",
-      address: "MADHABDEV NAGAR\nP.O. DEVOKOTANAGAR\nGUWAHATI-33, ASSAM",
-      occupation: "BUSINESS",
-    },
-    {
-      name: "CHAITALI D CHETRI",
-      designation: "GEN. SECRETARY",
-      address: "174, RAJGARH ROAD, 2ND FLOOR\nGUWAHATI-07",
-      occupation: "BUSINESS",
-    },
-    {
-      name: "NASIMA J DAS",
-      designation: "ASST GEN. SECRETARY",
-      address:
-        "FLAT NO – 24\nANCHIT DEVRAJ MANSION\nH/NO-24, NABAGRAHA RD\nSILPUKHURI",
-      occupation: "HOUSE-WIFE",
-    },
-    {
-      name: "KRISHNA DAS DAM",
-      designation: "TREASURER",
-      address: "110, SHANTI NIWAS\nRAJGARH MAIN ROAD\nGUWAHATI-05",
-      occupation: "TEACHER",
-    },
-    {
-      name: "RIPA CHETRI",
-      designation: "MEMBER",
-      address: "110, SHANTI NIWAS\nRAJGARH MAIN ROAD\nGUWAHATI-05",
-      occupation: "SERVICE",
-    },
-    {
-      name: "KUSHAL BHASKAR",
-      designation: "MEMBER",
-      address: "C/O K.C. PAUL, H.NO.\n37/1, BY LANE NO. 3\nSHREE NAGAR, GHY-5",
-      occupation: "SERVICE",
-    },
-  ];
-
-  const generalMembers = [
-    {
-      name: "DR. PRADEEP KR DAM",
-      designation: "Research Scholar",
-      address:
-        "D-156, Prithvi Raj Nagar\nNear Jhalamand circle\nSub PO: Jhalamand\nJodhpur- 342005, Rajasthan",
-      occupation: "Retired Social Scientist in ICMR, Jodhpur",
-    },
-    {
-      name: "DR. DEBASISH DEBNATH",
-      designation: "Research Scholar",
-      address:
-        "Sagar Premium Towers\n2 (Home) Block No. A\nFlat No. 302, J.K. Hospital Road\n(Kolar Road) Bhopal - 462042\n(Madhya Pradesh)",
-      occupation: "Assistant Professor, Indian Institute of Forest Management",
-    },
-    {
-      name: "Dr. Sushil K Upadhyay",
-      designation: "Research Scholar",
-      address: "27, Vivekananda Ward\nYadav Colony, Jabalpur\nM.P- 482002",
-      occupation: "Consultant Forest & Ethno Medicinal Plant, M.P.",
-    },
-    {
-      name: "MANISHA BORKOTOKY",
-      designation: "Project Associates",
-      address: "Kushal path, new Amolapatty\nGolaghat -785621\nAssam",
-      occupation: "Educational Advisor",
-    },
-    {
-      name: "BIJON KUMAR BHATTACHARJEE",
-      designation: "Auditor",
-      address:
-        "Krishna Market\nOpp. ASTC Busstand\nPaltanbazar, Guwahati-781008",
-      occupation: "Chartered Accountant",
-    },
-    {
-      name: "ABHIJIT BHATTACHARYA",
-      designation: "Legal Advisor",
-      address:
-        "Triveni's Commercial Complex\nB-15, 3rd Floor, Bora Service\nG.S.Road, Guwahati\nMeghalaya & Tripura",
-      occupation: "Advocate in High Court of Guwahati, Meghalaya & Tripura",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       <Hero />
+      <section className="bg-gradient-to-r from-sky-100 to-sky-50 py-16 px-6 lg:px-20">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-sky-800 mb-4">
+              Anandamayee Home – A Safe Haven for the Elderly
+            </h2>
+            <p className="text-gray-700 mb-6">
+              Help us provide dignity, care, and community to abandoned and
+              elderly individuals. Since October 2023, Anandamayee Home has
+              served as a refuge for those in need – celebrating festivals,
+              providing meals, medical care, and most importantly, compassion.
+            </p>
+            <ul className="mb-6 space-y-2 text-sm text-gray-600 list-disc pl-5">
+              <li>Daily meals and healthcare support</li>
+              <li>Cultural celebrations: Bihu, Holi & more</li>
+              <li>Physical, emotional, and spiritual care</li>
+            </ul>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/anandamayee-home"
+                className="px-6 py-3 bg-sky-700 text-white rounded-xl shadow hover:bg-sky-800 transition"
+              >
+                Learn More
+              </Link>
+              <Link
+                href="/donate"
+                className="px-6 py-3 border border-sky-700 text-sky-700 rounded-xl hover:bg-sky-100 transition"
+              >
+                Donate Now
+              </Link>
+            </div>
+          </div>
+          <div className="relative w-full h-96 rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/Anandamayee_Home.jpg"
+              alt="Anandamayee Home"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+        </div>
+      </section>
       {/* Mission Statement */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -250,7 +198,7 @@ export default function PathNGO() {
                   DONATE NOW
                 </button>
                 <button
-                  onClick={() => setShowAnandamayeeModal(true)}
+                  // onClick={() => setShowAnandamayeeModal(true)}
                   className="px-8 py-3 text-white border border-white hover:bg-white hover:text-sky-600 rounded-lg transition-colors"
                 >
                   LEARN MORE
@@ -275,147 +223,21 @@ export default function PathNGO() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
-              // onClick={() => setShowAnandamayeeModal(true)}
-              href="/anandamayee-home"
-            >
-              <div className="h-48 bg-gradient-to-r from-sky-400 to-sky-600 relative">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute top-4 left-4 bg-sky-600 text-white px-3 py-1 rounded-full text-sm">
-                  ELDERLY CARE
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-gray-800">
-                  ANANDAMAYEE HOME: A TRANQUIL NEST FOR OLD PEOPLE
-                </h3>
-                <p className="text-sm mb-4 text-gray-800">
-                  Providing dignified care, cultural activities, health
-                  check-ups, and celebrating festivals like Bihu and Holi with
-                  elderly residents since October 27, 2023.
-                </p>
-                <div className="flex items-center text-sm text-blue-800">
-                  <span>Learn more about our elderly care</span>
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </div>
-              </div>
-            </Link>
-
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
-              <div className="h-48 bg-gradient-to-r from-green-400 to-green-600 relative">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm">
-                  EDUCATION
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-gray-800">
-                  FREE COACHING & LITERACY PROGRAMS
-                </h3>
-                <p className="text-sm mb-4 text-gray-800">
-                  Educational development for unemployed youth, especially in
-                  rural areas. Free coaching programs and social welfare
-                  services to remove illiteracy.
-                </p>
-                <div className="flex items-center text-sm text-blue-800">
-                  <span>Discover our education initiatives</span>
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
-              <div className="h-48 bg-gradient-to-r from-yellow-400 to-yellow-500 relative">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute top-4 left-4 bg-yellow-500 text-gray-800 px-3 py-1 rounded-full text-sm">
-                  CULTURAL HERITAGE
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-gray-800">
-                  SATRIYA DANCE & CULTURAL PRESERVATION
-                </h3>
-                <p className="text-sm mb-4 text-gray-800">
-                  Empaneled with North East Zone Cultural Center, organizing
-                  Satriya dance workshops across different districts of Assam to
-                  preserve traditional arts.
-                </p>
-                <div className="flex items-center text-sm text-blue-800">
-                  <span>Explore cultural programs</span>
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
-              <div className="h-48 bg-gradient-to-r from-red-400 to-red-600 relative">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm">
-                  DISASTER RELIEF
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-gray-800">
-                  FLOOD RELIEF & REHABILITATION
-                </h3>
-                <p className="text-sm mb-4 text-gray-800">
-                  Emergency response during floods in Nagaon 2023,
-                  rehabilitation programs for street children, orphans, and old
-                  helpless people during natural calamities.
-                </p>
-                <div className="flex items-center text-sm text-blue-800">
-                  <span>See our disaster response</span>
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-800 relative">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute top-4 left-4 bg-blue-800 text-white px-3 py-1 rounded-full text-sm">
-                  HEALTHCARE
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-gray-800">
-                  HEALTH AWARENESS & CHECK-UP CAMPS
-                </h3>
-                <p className="text-sm mb-4 text-gray-800">
-                  Social awareness programs on AIDS, Cancer, TB, and Polio.
-                  Regular health check-up camps ensuring preventive healthcare
-                  reaches every community.
-                </p>
-                <div className="flex items-center text-sm text-blue-800">
-                  <span>Learn about health programs</span>
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
-              <div className="h-48 bg-gradient-to-r from-purple-400 to-purple-600 relative">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
-                <div className="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm">
-                  WOMEN EMPOWERMENT
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-gray-800">
-                  HANDLOOM & HANDICRAFTS TRAINING
-                </h3>
-                <p className="text-sm mb-4 text-gray-800">
-                  Empaneled with Development Commissioner (Handicrafts),
-                  organizing expos and training in weaving, cutting, embroidery
-                  for men, women and youth in rural areas.
-                </p>
-                <div className="flex items-center text-sm text-blue-800">
-                  <span>See empowerment programs</span>
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </div>
-              </div>
-            </div>
+            {program.map((program, index) => (
+              <ServiceCard
+                key={index}
+                category={program.category}
+                categoryColor={program.categoryColor}
+                gradientFrom={program.gradientFrom}
+                gradientTo={program.gradientTo}
+                title={program.title}
+                description={program.description}
+                actionText={program.actionText}
+                image={program.image}
+                href={program.href}
+                Gallery={program.Gallery}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -497,65 +319,38 @@ export default function PathNGO() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-lime-700">
+      <section className="py-20 bg-lime-700">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">
-                GET INVOLVED – TAKE{" "}
-                <span className="text-yellow-400">ACTION</span>
+                CONTACT US FOR{" "}
+                <span className="text-yellow-400">DONATIONS</span>
               </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-yellow-400">
-                  <DollarSign className="w-8 h-8 text-gray-800" />
-                </div>
-                <h3 className="font-bold text-white mb-2">
-                  TAX BENEFITS AVAILABLE
-                </h3>
-                <p className="text-white/80 text-sm">
-                  80G Tax exemption, CSR eligible, and FCRA registered for
-                  donations.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-yellow-400">
-                  <Users className="w-8 h-8 text-gray-800" />
-                </div>
-                <h3 className="font-bold text-white mb-2">JOIN OUR PROGRAMS</h3>
-                <p className="text-white/80 text-sm">
-                  Volunteer in our cultural, education, and healthcare
-                  initiatives.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-yellow-400">
-                  <HandHeart className="w-8 h-8 text-gray-800" />
-                </div>
-                <h3 className="font-bold text-white mb-2">
-                  SUPPORT ANANDAMAYEE HOME
-                </h3>
-                <p className="text-white/80 text-sm">
-                  Help fund our elderly care project and make an immediate
-                  impact.
-                </p>
-              </div>
+              <p className="text-white/90 max-w-2xl mx-auto">
+                Ready to make a difference? Contact us through any of the
+                methods below to discuss your donation or learn more about our
+                programs.
+              </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-12">
+                {/* Contact Information */}
                 <div>
-                  <h3 className="text-2xl font-bold mb-6 text-gray-800">
-                    CONTACT PATH NGO
+                  <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+                    <Phone className="w-6 h-6 text-sky-600" />
+                    Get in Touch
                   </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="w-5 h-5 mt-1 text-sky-600" />
+
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <MapPin className="w-5 h-5 text-sky-600" />
+                      </div>
                       <div>
-                        <p className="font-medium text-gray-800">Address</p>
-                        <p className="text-sm text-gray-800">
+                        <p className="font-bold text-gray-900 mb-1">Address</p>
+                        <p className="text-gray-700 text-sm leading-relaxed">
                           26, Bhaskar Nagar, R.G. Baruah Road
                           <br />
                           Near Bhaskar Vidyapith School
@@ -564,49 +359,126 @@ export default function PathNGO() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Phone className="w-5 h-5 mt-1 text-sky-600" />
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <Phone className="w-5 h-5 text-sky-600" />
+                      </div>
                       <div>
-                        <p className="font-medium text-gray-800">
+                        <p className="font-bold text-gray-900 mb-1">
                           Phone Numbers
                         </p>
-                        <p className="text-sm text-gray-800">
-                          Office: 0361-2956699
-                          <br />
-                          Mobile: +91 94351 18741
-                          <br />
-                          +91 60032 58678
-                          <br />
-                          +91 94351 13659
-                          <br />
-                          +91 87239 34693
-                        </p>
+                        <div className="text-gray-700 text-sm space-y-1">
+                          <p>
+                            <span className="font-medium">Office:</span>{" "}
+                            0361-2956699
+                          </p>
+                          <p>
+                            <span className="font-medium">Mobile:</span> +91
+                            94351 18741
+                          </p>
+                          <p>
+                            <span className="font-medium">Mobile:</span> +91
+                            60032 58678
+                          </p>
+                          <p>
+                            <span className="font-medium">Mobile:</span> +91
+                            94351 13659
+                          </p>
+                          <p>
+                            <span className="font-medium">Mobile:</span> +91
+                            87239 34693
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Mail className="w-5 h-5 mt-1 text-sky-600" />
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <Mail className="w-5 h-5 text-sky-600" />
+                      </div>
                       <div>
-                        <p className="font-medium text-gray-800">Email</p>
-                        <p className="text-sm text-gray-800">
+                        <p className="font-bold text-gray-900 mb-1">Email</p>
+                        <p className="text-gray-700 text-sm">
                           ngo_people@yahoo.in
                         </p>
                       </div>
                     </div>
                   </div>
+
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <a
+                      href="tel:+919435118741"
+                      className="px-6 py-3 bg-sky-600 text-white rounded-lg font-medium hover:bg-sky-700 transition-colors"
+                    >
+                      Call Now
+                    </a>
+                    <a
+                      href="mailto:ngo_people@yahoo.in"
+                      className="px-6 py-3 bg-lime-700 text-white rounded-lg font-medium hover:bg-lime-800 transition-colors"
+                    >
+                      Send Email
+                    </a>
+                  </div>
                 </div>
-                <div className="space-y-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full p-3 border text-black placeholder:text-gray-400 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600"
-                  />
-                  <button className="w-full bg-sky-600 text-white font-semibold py-3 rounded-lg hover:bg-sky-700 transition-colors">
-                    SUBSCRIBE TO NEWSLETTER
-                  </button>
-                  <div className="text-center mt-4">
-                    <p className="text-sm text-gray-800">
-                      <strong>Registration:</strong> KAM/240/A-3/439 of 2006
-                    </p>
+
+                {/* Why Donate Section */}
+                <div>
+                  <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+                    <Heart className="w-6 h-6 text-red-500" />
+                    Why Your Support Matters
+                  </h3>
+
+                  <div className="space-y-4 mb-8">
+                    <div className="border-l-4 border-sky-500 pl-4">
+                      <h4 className="font-bold text-gray-900">
+                        Anandamayee Home
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Providing dignified care and support for elderly
+                        residents since October 2023
+                      </p>
+                    </div>
+                    <div className="border-l-4 border-lime-500 pl-4">
+                      <h4 className="font-bold text-gray-900">
+                        Community Development
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Empowering women and children through education and
+                        skill development
+                      </p>
+                    </div>
+                    <div className="border-l-4 border-yellow-500 pl-4">
+                      <h4 className="font-bold text-gray-900">
+                        Healthcare Programs
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Regular health check-ups and medical support for the
+                        underprivileged
+                      </p>
+                    </div>
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <h4 className="font-bold text-gray-900">
+                        Cultural Preservation
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        Preserving Assamese heritage through traditional arts
+                        and crafts
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-sky-50 to-lime-50 p-6 rounded-lg border border-sky-200">
+                    <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                      <Target className="w-5 h-5 text-sky-600" />
+                      Government Recognition
+                    </h4>
+                    <div className="text-sm text-gray-700 space-y-1">
+                      <p>✓ 80G Tax Exemption Available</p>
+                      <p>✓ FCRA Registered for International Donations</p>
+                      <p>✓ CSR Eligible for Corporate Funding</p>
+                      <p>✓ NITI Aayog Registered</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -614,247 +486,6 @@ export default function PathNGO() {
           </div>
         </div>
       </section>
-
-      {/* Members Modal */}
-      {showMembersModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-              <h2 className="text-2xl font-semibold text-sky-600">
-                Our Team Members
-              </h2>
-              <button
-                onClick={() => setShowMembersModal(false)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="p-6 space-y-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-lime-700">
-                  Executive Body Members
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {executiveMembers.map((member, index) => (
-                    <div
-                      key={index}
-                      className="bg-white border rounded-lg p-4 text-center shadow-sm"
-                    >
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3 bg-sky-600">
-                        {member.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </div>
-                      <h4 className="font-semibold text-gray-800">
-                        {member.name}
-                      </h4>
-                      <p className="font-medium text-sm text-sky-600">
-                        {member.designation}
-                      </p>
-                      <p className="text-xs mt-2 whitespace-pre-line text-gray-800">
-                        {member.address}
-                      </p>
-                      <p className="text-xs mt-1 text-gray-800">
-                        <strong>Occupation:</strong> {member.occupation}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-lime-700">
-                  General Body Members (Resource Persons)
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {generalMembers.map((member, index) => (
-                    <div
-                      key={index}
-                      className="bg-white border rounded-lg p-4 text-center shadow-sm"
-                    >
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3 bg-sky-600">
-                        {member.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </div>
-                      <h4 className="font-semibold text-gray-800">
-                        {member.name}
-                      </h4>
-                      <p className="font-medium text-sm text-sky-600">
-                        {member.designation}
-                      </p>
-                      <p className="text-xs mt-2 whitespace-pre-line text-gray-800">
-                        {member.address}
-                      </p>
-                      <p className="text-xs mt-1 text-gray-800">
-                        <strong>Occupation:</strong> {member.occupation}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Anandamayee Home Modal */}
-      {showAnandamayeeModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-              <h2 className="text-2xl font-semibold text-sky-600 flex items-center gap-2">
-                <Home className="w-6 h-6" />
-                Anandamayee Home - A Tranquil Nest for Old People
-              </h2>
-              <button
-                onClick={() => setShowAnandamayeeModal(false)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="p-6 space-y-6">
-              <div className="text-center">
-                <div className="inline-block text-white px-6 py-3 rounded-lg bg-sky-600">
-                  <strong>Established: 27th October 2023</strong>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-sky-600 text-white p-4">
-                    <h3 className="text-lg font-semibold">
-                      🇮🇳 Independence Day 2023
-                    </h3>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-sm text-gray-800">
-                      Patriotic celebrations with residents participating in
-                      cultural programs, flag hoisting, and traditional
-                      festivities that brought joy and national pride to
-                      everyone.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-lime-700 text-white p-4">
-                    <h3 className="text-lg font-semibold">
-                      🌊 Flood Relief - Nagaon 2023
-                    </h3>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-sm text-gray-800">
-                      Our team organized flood relief activities, providing
-                      essential supplies and support to affected families during
-                      the natural disaster in Nagaon district.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-blue-800 text-white p-4">
-                    <h3 className="text-lg font-semibold">
-                      📚 Free Coaching Program
-                    </h3>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-sm text-gray-800">
-                      Educational support for underprivileged children, helping
-                      them build a better future through mentorship and quality
-                      education alongside our elderly care mission.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-sky-600 text-white p-4">
-                    <h3 className="text-lg font-semibold">
-                      🩺 Health Check-up Camps
-                    </h3>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-sm text-gray-800">
-                      Regular medical check-ups for residents and community
-                      members, ensuring preventive healthcare and medical
-                      attention from qualified professionals.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-yellow-500 text-gray-800 p-4">
-                    <h3 className="text-lg font-semibold">
-                      🎊 Bihu Celebration
-                    </h3>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-sm text-gray-800">
-                      Traditional Assamese New Year celebrations with music,
-                      dance, delicious cuisine, and cultural programs that
-                      strengthen community bonds and bring joy to elderly
-                      residents.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
-                  <div className="bg-lime-700 text-white p-4">
-                    <h3 className="text-lg font-semibold">
-                      🌈 Holi Celebration
-                    </h3>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-sm text-gray-800">
-                      Festival of colors bringing boundless joy to elderly
-                      residents with colorful celebrations, creating lasting
-                      memories and happiness in their golden years.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-center p-8 rounded-xl bg-black/10">
-                <h3 className="text-xl font-semibold mb-4 text-sky-600">
-                  Support Our Mission - Funding Needed
-                </h3>
-                <p className="mb-4 text-gray-800">
-                  Help us continue providing love, care, and dignity to elderly
-                  people in our community. We are seeking funding to expand
-                  Anandamayee Home before the end of this year. Your support
-                  enables us to reach more seniors in need.
-                </p>
-                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600 mb-4">
-                  <div>
-                    <strong className="text-sky-600">Tax Benefits:</strong>
-                    <br />
-                    80G Tax Exemption Available
-                  </div>
-                  <div>
-                    <strong className="text-sky-600">CSR Eligible:</strong>
-                    <br />
-                    Corporate Funding Welcome
-                  </div>
-                  <div>
-                    <strong className="text-sky-600">FCRA Registered:</strong>
-                    <br />
-                    International Donations Accepted
-                  </div>
-                </div>
-                <div className="font-semibold text-sky-600">
-                  🤝 Partner with us in making a difference 🤝
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
