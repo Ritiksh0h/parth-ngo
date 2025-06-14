@@ -1,8 +1,5 @@
 "use client";
 import {
-  Phone,
-  Mail,
-  MapPin,
   Heart,
   Building,
   Users,
@@ -16,6 +13,8 @@ import { ServiceCard } from "@/components/ProgramsCard";
 import { program } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
+import WhyDonateCard from "@/components/WhyDonateCard";
+import ContactUs from "@/components/ContactUs";
 
 export default function PathNGO() {
   return (
@@ -346,150 +345,8 @@ export default function PathNGO() {
             <div className="bg-white rounded-2xl p-8">
               <div className="grid md:grid-cols-2 gap-12">
                 {/* Contact Information */}
-                <div>
-                  <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
-                    <Phone className="w-6 h-6 text-sky-600" />
-                    Get in Touch
-                  </h3>
-
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                        <MapPin className="w-5 h-5 text-sky-600" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-gray-900 mb-1">Address</p>
-                        <p className="text-gray-700 text-sm leading-relaxed">
-                          26, Bhaskar Nagar, R.G. Baruah Road
-                          <br />
-                          Near Bhaskar Vidyapith School
-                          <br />
-                          Guwahati - 781021, Assam
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                        <Phone className="w-5 h-5 text-sky-600" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-gray-900 mb-1">
-                          Phone Numbers
-                        </p>
-                        <div className="text-gray-700 text-sm space-y-1">
-                          <p>
-                            <span className="font-medium">Office:</span>{" "}
-                            0361-2956699
-                          </p>
-                          <p>
-                            <span className="font-medium">Mobile:</span> +91
-                            94351 18741
-                          </p>
-                          <p>
-                            <span className="font-medium">Mobile:</span> +91
-                            60032 58678
-                          </p>
-                          <p>
-                            <span className="font-medium">Mobile:</span> +91
-                            94351 13659
-                          </p>
-                          <p>
-                            <span className="font-medium">Mobile:</span> +91
-                            87239 34693
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                        <Mail className="w-5 h-5 text-sky-600" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-gray-900 mb-1">Email</p>
-                        <p className="text-gray-700 text-sm">
-                          ngo_people@yahoo.in
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <a
-                      href="tel:+919435118741"
-                      className="px-6 py-3 bg-sky-600 text-white rounded-lg font-medium hover:bg-sky-700 transition-colors"
-                    >
-                      Call Now
-                    </a>
-                    <a
-                      href="mailto:ngo_people@yahoo.in"
-                      className="px-6 py-3 bg-lime-700 text-white rounded-lg font-medium hover:bg-lime-800 transition-colors"
-                    >
-                      Send Email
-                    </a>
-                  </div>
-                </div>
-
-                {/* Why Donate Section */}
-                <div>
-                  <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
-                    <Heart className="w-6 h-6 text-red-500" />
-                    Why Your Support Matters
-                  </h3>
-
-                  <div className="space-y-4 mb-8">
-                    <div className="border-l-4 border-sky-500 pl-4">
-                      <h4 className="font-bold text-gray-900">
-                        Anandamayee Home
-                      </h4>
-                      <p className="text-gray-600 text-sm">
-                        Providing dignified care and support for elderly
-                        residents since October 2023
-                      </p>
-                    </div>
-                    <div className="border-l-4 border-lime-500 pl-4">
-                      <h4 className="font-bold text-gray-900">
-                        Community Development
-                      </h4>
-                      <p className="text-gray-600 text-sm">
-                        Empowering women and children through education and
-                        skill development
-                      </p>
-                    </div>
-                    <div className="border-l-4 border-yellow-500 pl-4">
-                      <h4 className="font-bold text-gray-900">
-                        Healthcare Programs
-                      </h4>
-                      <p className="text-gray-600 text-sm">
-                        Regular health check-ups and medical support for the
-                        underprivileged
-                      </p>
-                    </div>
-                    <div className="border-l-4 border-purple-500 pl-4">
-                      <h4 className="font-bold text-gray-900">
-                        Cultural Preservation
-                      </h4>
-                      <p className="text-gray-600 text-sm">
-                        Preserving Assamese heritage through traditional arts
-                        and crafts
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-sky-50 to-lime-50 p-6 rounded-lg border border-sky-200">
-                    <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                      <Target className="w-5 h-5 text-sky-600" />
-                      Government Recognition
-                    </h4>
-                    <div className="text-sm text-gray-700 space-y-1">
-                      <p>✓ 80G Tax Exemption Available</p>
-                      <p>✓ FCRA Registered for International Donations</p>
-                      <p>✓ CSR Eligible for Corporate Funding</p>
-                      <p>✓ NITI Aayog Registered</p>
-                    </div>
-                  </div>
-                </div>
+                <ContactUs />
+                <WhyDonateCard />
               </div>
             </div>
           </div>

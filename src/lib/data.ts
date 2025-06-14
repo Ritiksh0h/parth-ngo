@@ -32,21 +32,24 @@ const executiveMembers = [
     name: "KRISHNA DAS DAM",
     profile: "/Krishna_Das_Dam.jpg",
     designation: "TREASURER",
-    address: "110, SHANTI NIWAS\nRAJGARH MAIN ROAD\nGUWAHATI-05",
+    address:
+      "H.NO 17, MANDAKINI PATH,\nBYLANE 1, KAHILIPARA,\nJATIA GUWAHATI - 781006",
     occupation: "TEACHER",
   },
   {
     name: "RIPA CHETRI",
     profile: "/Ripa_Chetri.jpg",
     designation: "MEMBER",
-    address: "110, SHANTI NIWAS\nRAJGARH MAIN ROAD\nGUWAHATI-05",
+    address:
+      "THE BIRAJ SHARMA HERITAGE,\nH.NO-174 RAJGARH MAIN ROAD, GUWAHATI-07",
     occupation: "SERVICE",
   },
   {
     name: "KUSHAL BHASKAR",
     profile: "/Kushal_Bhaskar.jpg",
     designation: "MEMBER",
-    address: "C/O K.C. PAUL, H.NO.\n37/1, BY LANE NO. 3\nSHREE NAGAR, GHY-5",
+    address:
+      "C/O BHAGYA PATOWARY, H.NO 17,\nMANDAKINI PATH, BYLANE 1,\nKAHILIPARA, JATIA GUWAHATI - 781006",
     occupation: "SERVICE",
   },
 ];
@@ -75,7 +78,7 @@ const generalMembers = [
   {
     name: "Manobendra Deka",
     designation: "Legal Advisor",
-    address: "House No 40\nNear Bhootnath, Guwahati, Assam",
+    address: "C/O PRAKASH TALUKDER\nH. NO- 40 DURGA SAROVAR GUWAHATI -781009",
     occupation: "Advocate in High Court of Guwahati",
   },
 ];
