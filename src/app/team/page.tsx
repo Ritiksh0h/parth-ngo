@@ -2,6 +2,7 @@
 
 import SubPageHeader from "@/components/SubPageHeader";
 import { executiveMembers, generalMembers } from "@/lib/data";
+import Image from "next/image";
 
 export default function TeamPage() {
   return (
@@ -20,12 +21,22 @@ export default function TeamPage() {
                   key={index}
                   className="bg-white border rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 bg-sky-600">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
+                  {member.profile ? (
+                    <Image
+                      width={80}
+                      height={80}
+                      src={member.profile}
+                      alt={member.name}
+                      className="w-20 h-20 rounded-full mx-auto cover-fit mb-4"
+                    />
+                  ) : (
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 bg-sky-600">
+                      {member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </div>
+                  )}
                   <h3 className="font-semibold text-lg text-gray-800">
                     {member.name}
                   </h3>

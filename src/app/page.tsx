@@ -178,7 +178,16 @@ export default function PathNGO() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-[url(/health_camp_2.jpg)] relative bg-cover bg-center">
+      <section className="py-20 relative bg-cover bg-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/health_camp_2.jpg"
+            alt="Elderly Care"
+            layout="fill"
+            objectFit="cover"
+            className="absolute inset-0"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-700/70" />
         <div className="container mx-auto px-4 z-20">
           <div className="max-w-4xl mx-auto">

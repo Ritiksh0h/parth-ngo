@@ -19,6 +19,7 @@ const executiveMembers = [
   },
   {
     name: "NASIMA J DAS",
+    profile: "/Nasima_J_Das.jpg",
     designation: "ASST GEN. SECRETARY",
     address:
       "FLAT NO – 24\nANCHIT DEVRAJ MANSION\nH/NO-24, NABAGRAHA RD\nSILPUKHURI",
@@ -149,7 +150,7 @@ const program = [
     description:
       "Social awareness programs on AIDS, Cancer, TB, and Polio. Regular health check-up camps ensuring preventive healthcare reaches every community.",
     actionText: "Learn about health programs",
-	image: "/Health_camp_1.jpg",
+    image: "/Health_camp_1.jpg",
     Gallery: [
       "/Health_camp_1.jpg",
       "/Health_camp_2.jpg",
