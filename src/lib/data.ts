@@ -1,5 +1,3 @@
-import { profile } from "console";
-
 const executiveMembers = [
   {
     name: "MEGHALI DEKA",
