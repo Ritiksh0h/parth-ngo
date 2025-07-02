@@ -67,7 +67,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo_path_ritik.png"
+                src="/logo_path.png"
                 alt="Path NGO Logo"
                 width={150}
                 height={150}
