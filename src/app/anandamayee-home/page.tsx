@@ -68,14 +68,14 @@ export default function AnandamayeeHomePage() {
               title="🎊 Bihu Celebration"
               image="/Bihu_AH_1.jpg"
               description="Traditional Assamese New Year celebrations with music, dance, delicious cuisine, and cultural programs that strengthen community bonds and bring joy to elderly residents."
-              Gallery={["/Bihu_AH_1.jpg", "/Bihu_AH_2.jpg"]}
+              Gallery={["/Bihu_AH_1.jpg", "/Bihu_AH_2.JPG"]}
             />
 
             <EventCard
               title="🩺 Health Check-up Camps"
               image="/Healthcheckup_AH_2.jpg"
               description="Regular medical check-ups for residents and community members, ensuring preventive healthcare and medical attention from qualified professionals."
-              Gallery={["/Healthcheckup_AH_1.jpg", "/Healthcheckup_AH_2.jpg"]}
+              Gallery={["/Healthcheckup_AH_1.JPG", "/Healthcheckup_AH_2.JPG"]}
             />
           </div>
 

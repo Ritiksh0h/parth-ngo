@@ -6,9 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "next build && next export"
   },
   "dependencies": {
+    "@next/third-parties": "^15.3.3",
     "lucide-react": "^0.514.0",
     "motion": "^12.18.1",
     "next": "15.3.3",

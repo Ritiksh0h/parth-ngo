@@ -128,7 +128,7 @@ const program = [
       "/Dance_workshop_7.jpg",
       "/Dance_workshop_8.jpg",
       "/Dance_workshop_9.jpg",
-      "/Dance_workshop.jpg",
+      "/dance_workshop.jpg",
       "/Cultural_show_1.JPG",
       "/Independence_Day_1.jpg",
       "/Independence_Day_2.jpg",
@@ -162,10 +162,10 @@ const program = [
     image: "/Health_camp_1.jpg",
     Gallery: [
       "/Health_camp_1.jpg",
-      "/Health_camp_2.jpg",
-      "/Health_camp_3.jpg",
-      "/dental_camp_1.JPG",
-    ], // This will open a gallery
+      "/health_camp_2.JPG",
+      "/Health_camp_3.JPG",
+      "/Dental_camp_1.JPG",
+    ],
   },
   {
     category: "WOMEN EMPOWERMENT",
@@ -177,11 +177,11 @@ const program = [
       "Empaneled with Development Commissioner (Handicrafts), organizing expos and training in weaving, cutting, embroidery for men, women and youth in rural areas.",
     actionText: "See empowerment programs",
     Gallery: [
-      "/Expo_1.jpg",
-      "/Expo_2.jpg",
+      "/Expo_1.JPG",
+      "/Expo_2.JPG",
       "/Expo_3.jpg",
       "/Expo_4.jpg",
-      "/Expo_5.jpg",
+      "/Expo_5.JPG",
     ],
     image: "/Expo_3.jpg",
   },

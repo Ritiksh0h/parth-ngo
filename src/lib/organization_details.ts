@@ -9,9 +9,9 @@ export const ORGANIZATION_DETAILS = {
   ],
   mission: "To make community wellbeing in Health, Education and Livelihood towards enlightenment and empowerment through Research, Consultancy, Training & Extension, and Development with Legal Aid support.",
   vision: "To have an enlightened society with empowerment of depressed classes and victims, especially Women & Children.",
-  ogImage: `https://parth-ngo.vercel.app/LOGO.png`,
-  ogImageSmall: `https://parth-ngo.vercel.app/LOGO.png`,
-  url: `https://parth-ngo.vercel.app`,
+  ogImage: `https://parthngo.org/LOGO.png`,
+  ogImageSmall: `https://parthngo.org/LOGO.png`,
+  url: `https://parthngo.org`,
   established: "26th July 2006",
   experience: "18+ Years",
   registration: {
