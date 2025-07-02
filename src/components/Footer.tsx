@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div className="flex items-center justify-center space-x-2">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo_path_ritik.png"
+                src="/logo_path.png"
                 alt="Path NGO Logo"
                 width={150}
                 height={150}
