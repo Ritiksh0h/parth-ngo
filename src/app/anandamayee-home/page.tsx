@@ -73,7 +73,7 @@ export default function AnandamayeeHomePage() {
 
             <EventCard
               title="🩺 Health Check-up Camps"
-              image="/Healthcheckup_AH_2.jpg"
+              image="/Healthcheckup_AH_2.JPG"
               description="Regular medical check-ups for residents and community members, ensuring preventive healthcare and medical attention from qualified professionals."
               Gallery={["/Healthcheckup_AH_1.JPG", "/Healthcheckup_AH_2.JPG"]}
             />
