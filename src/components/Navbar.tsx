@@ -1,65 +1,67 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { usePathname } from "next/navigation"
-import { scrollToSection } from "@/lib/utils"
-import Link from "next/link"
-import Image from "next/image"
-import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "motion/react"
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { scrollToSection } from "@/lib/utils";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname !== "/") return // Only run scroll logic on homepage
+    if (pathname !== "/") return; // Only run scroll logic on homepage
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
-    handleScroll() // Initial check on mount
+    handleScroll(); // Initial check on mount
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [pathname])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [pathname]);
 
   // Close mobile menu when pathname changes
   useEffect(() => {
-    setIsMobileMenuOpen(false)
-  }, [pathname])
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = "unset"
-    }
-  }, [isMobileMenuOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
 
-  const isActive = pathname === "/" ? isScrolled : true
+  const isActive = pathname === "/" ? isScrolled : true;
 
   const handleSectionClick = (section: string) => {
-    scrollToSection(section)
-    setIsMobileMenuOpen(false) // Close mobile menu after clicking
-  }
+    scrollToSection(section);
+    setIsMobileMenuOpen(false); // Close mobile menu after clicking
+  };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <>
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isActive ? "bg-white backdrop-blur-sm shadow-sm" : "bg-transparent border-b border-transparent"
+          isActive
+            ? "bg-white backdrop-blur-sm shadow-sm"
+            : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="container mx-auto px-4">
@@ -78,15 +80,16 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {["about", "impact", "projects", "contact"].map((section) => (
-                <button
+                <Link
                   key={section}
+                  href={"/" + section}
                   onClick={() => scrollToSection(section)}
                   className={`text-sm font-medium ${
                     isActive ? "text-gray-800" : "text-white"
                   } hover:text-sky-600 transition-colors capitalize`}
                 >
                   {section}
-                </button>
+                </Link>
               ))}
 
               <Link
@@ -112,11 +115,17 @@ export default function Navbar() {
             <button
               onClick={toggleMobileMenu}
               className={`md:hidden p-2 rounded-lg transition-colors ${
-                isActive ? "text-gray-800 hover:bg-gray-100" : "text-white hover:bg-white/10"
+                isActive
+                  ? "text-gray-800 hover:bg-gray-100"
+                  : "text-white hover:bg-white/10"
               }`}
               aria-label="Toggle mobile menu"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -133,7 +142,10 @@ export default function Navbar() {
             className="fixed inset-0 z-40 md:hidden"
           >
             {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
+            <div
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
 
             {/* Menu Content */}
             <motion.div
@@ -188,12 +200,14 @@ export default function Navbar() {
 
               {/* Menu Footer */}
               <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 bg-gray-50">
-                <p className="text-sm text-gray-600 text-center">Making a difference together</p>
+                <p className="text-sm text-gray-600 text-center">
+                  Making a difference together
+                </p>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
