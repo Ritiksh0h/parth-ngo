@@ -82,7 +82,7 @@ export default function Navbar() {
               {["about", "impact", "projects", "contact"].map((section) => (
                 <Link
                   key={section}
-                  href={"/" + section}
+                  href={"#" + section}
                   onClick={() => scrollToSection(section)}
                   className={`text-sm font-medium ${
                     isActive ? "text-gray-800" : "text-white"
