@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { scrollToSection } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,6 +12,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     if (pathname !== "/") return; // Only run scroll logic on homepage
@@ -47,8 +48,12 @@ export default function Navbar() {
   const isActive = pathname === "/" ? isScrolled : true;
 
   const handleSectionClick = (section: string) => {
-    scrollToSection(section);
-    setIsMobileMenuOpen(false); // Close mobile menu after clicking
+    if (pathname === "/") {
+      scrollToSection(section);
+    } else {
+      router.push(`/?scrollTo=${section}`);
+    }
+    setIsMobileMenuOpen(false);
   };
 
   const toggleMobileMenu = () => {
@@ -80,16 +85,15 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {["about", "impact", "projects", "contact"].map((section) => (
-                <Link
+                <button
                   key={section}
-                  href={"#" + section}
-                  onClick={() => scrollToSection(section)}
+                  onClick={() => handleSectionClick(section)}
                   className={`text-sm font-medium ${
                     isActive ? "text-gray-800" : "text-white"
                   } hover:text-sky-600 transition-colors capitalize`}
                 >
                   {section}
-                </Link>
+                </button>
               ))}
 
               <Link
